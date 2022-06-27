@@ -1,5 +1,5 @@
 import React from 'react'
-import './Slider.scss'
+import './Dot.scss'
 
 const Dot = ({index, sliderIndex}) => {
   return (

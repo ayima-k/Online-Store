@@ -21,10 +21,16 @@ const Footer = () => {
           <footer className={cls.footerMobile}>
             <h2>Соц сети</h2>
             <div className={cls.icons}>
-              <span><FiFacebook/></span>
-              <span><BsInstagram/></span>
+              <span onClick={() => {
+                window.open('https://www.facebook.com/')
+              }}><FiFacebook/></span>
+              <span onClick={() => {
+                window.open('https://www.instagram.com/?hl=ru')
+              }}><BsInstagram/></span>
               <span><CgMail/></span>
-              <span><BsTelephoneOutbound/></span>
+              <span onClick={() => {
+                window.open('https://t.me/indira_55')
+              }}><BsTelephoneOutbound/></span>
             </div>
             <div>
               <p>
@@ -41,10 +47,16 @@ const Footer = () => {
           <footer>
             <h2>Соц сети</h2>
             <div className={cls.icons}>
-              <span><FiFacebook/></span>
-              <span><BsInstagram/></span>
+              <span onClick={() => {
+                window.open('https://www.facebook.com/')
+              }}><FiFacebook/></span>
+              <span onClick={() => {
+                window.open('https://www.instagram.com/?hl=ru')
+              }}><BsInstagram/></span>
               <span><CgMail/></span>
-              <span><BsTelephoneOutbound/></span>
+              <span onClick={() => {
+                window.open('https://t.me/indira_55')
+              }}><BsTelephoneOutbound/></span>
             </div>
             <div>
               <p>
