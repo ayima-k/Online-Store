@@ -36,6 +36,9 @@
   .cardBody{
     margin-top: -7px;
     margin-left: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     p{
       margin-left: 25px;
     }
@@ -62,14 +65,14 @@
           text-decoration: none;
         }
       }
-      .iconList{
-        list-style: none;
-        display: flex;
-        li{
-          font-size: 25px;
-          padding: 0 10px;
-          cursor: pointer;
-        }
+    }
+    .iconList{
+      list-style: none;
+      display: flex;
+      li{
+        font-size: 25px;
+        padding: 0 10px;
+        cursor: pointer;
       }
     }
   }

@@ -17,18 +17,20 @@ const CardTemplate = ({name, price, category, basket, favorite, url, id}) => {
         />
       </div>
       <div className={cls.cardBody}>
-        <p className={cls.price}>{price} cом</p>
-        <p className={cls.cardTitle}>{name}</p>
+        <div>
+          <p className={cls.cardTitle}>{name}</p>
+          <p className={cls.price}>{price} cом</p>
+        </div>
         
         <div className={cls.more}>
-          <div className={cls.url}>
+          {/* <div className={cls.url}>
             <Link to={`cards/${id}`} className={cls.btnMore}>Подробнее </Link>
-          </div>
-          <ul className={cls.iconList}>
-            <li>{favorite ? <AiFillHeart/> : <BsHeart/>}</li>
-            <li>{basket ? <FaShoppingCart/> : <AiOutlineShoppingCart/>}</li>
-          </ul>
+          </div> */}
         </div>
+        <ul className={cls.iconList}>
+          <li>{favorite ? <AiFillHeart/> : <BsHeart/>}</li>
+          <li>{basket ? <FaShoppingCart/> : <AiOutlineShoppingCart/>}</li>
+        </ul>
       </div>
     </div>
   )

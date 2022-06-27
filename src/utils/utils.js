@@ -13,11 +13,11 @@ export const SliderList = [
     },
     {
         id: 4,
-        url: 'https://cdnn21.img.ria.ru/images/07e5/0c/07/1762635818_0:0:3071:1727_1920x0_80_0_0_f719b1ed3037d48b05808b16362d7def.jpg'
+        url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ghi-best-comfortable-shoes-1596050818.png?crop=0.997xw:0.997xh;0,0&resize=1200:*'
     },
     {
         id: 5,
-        url: 'https://www.ferra.ru/imgs/2021/01/11/22/4449605/4d6bd6ad64e39612bea0e3b693a2a698d1349eca.jpg'
+        url: 'https://thumbs.dreamstime.com/b/banner-classic-men-leather-blue-shoes-gray-background-casual-close-up-222969668.jpg'
     }
 ]
 
