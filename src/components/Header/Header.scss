@@ -179,8 +179,8 @@
 .tabletProfile.active{
   top: 11%;
   z-index: 999;
-  @media (min-width: 1520px) {
-    top: 5%;
+  @media (min-width: 1540px) {
+    top: 11%;
   }
 }
 .containerCategory{
@@ -189,7 +189,7 @@
   justify-content: center;
   margin: 3% 0;
   .rowCategory{
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
   }
