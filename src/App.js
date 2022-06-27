@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import LayoutRoutes from './pages/LayoutPages'
+import AuthRoutes from './pages/AuthPages'
+import Loader from "./components/Loader";
+import { useAuth } from "./providers/useAuth";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export function App() {
+  const { users , loading} = useAuth()
+  console.log(users);
+
+  if (loading) return <Loader/>
+
+  return users ? <LayoutRoutes/> : <AuthRoutes/>
 }
 
 export default App;

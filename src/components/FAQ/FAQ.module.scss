@@ -1,0 +1,27 @@
+.block{
+  padding: 0 5rem;
+  @media (max-width: 425px) {
+    padding: 0 2rem;
+  }
+  h1{
+    text-align: left;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    margin-top: 4rem;
+    margin-bottom: 0;
+    @media (max-width: 425px) {
+      font-size: 25px;
+    }
+  }
+  span{
+    font-family: 'Bad Script';
+    color: #514A7E;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .accordion{
+    margin: 20px 0;
+  }
+}

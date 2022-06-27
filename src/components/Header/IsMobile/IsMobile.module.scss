@@ -1,0 +1,43 @@
+.header{
+  .navbar{
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10rem;
+  }
+  .searchInput{
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    height: 35px;
+    background: #FFFDF5;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border: 0.5px solid black;
+    &::placeholder{
+      position: absolute;
+      width: 45px;
+      height: 25px;
+      left: 30px;
+      top: 9px;
+      font-size: 15px;
+      color: #7D7D7D;
+    }
+    @media (min-width: 375px) {
+      width: 88%;
+    }
+    @media (min-width: 425px) {
+      width: 80%;
+    }
+  }
+  .searchIcon{
+    position: absolute;
+    left: 5%;
+    right: 13%;
+    top: 20px;
+    bottom: 19.44%;
+    z-index: 10;
+  }
+}

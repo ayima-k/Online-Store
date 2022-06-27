@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  form{
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    .container{
+      text-align: center;
+      width: 100%;
+      cursor: pointer;
+    }
+    h1{
+      margin: 0;
+      margin-top: 12rem;
+      text-align: center;
+      width: 100% !important;
+      font-size: 30px !important;
+      color: #121212;
+    }
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        width: 70%;
+        justify-content: center;
+        gap: 10px;
+      }
+      width: 39%;
+      button{
+        border-radius: 0;
+        width: 150px;
+        margin-bottom: 10px;
+        position: relative;
+        font-size: 15px;
+        height: 37px;
+        border: 0.5px solid #514A7E;
+      }
+    }
+    .go{
+      border-radius: 0;
+      width: 150px;
+      margin-bottom: 10px;
+      position: relative;
+      font-size: 15px;
+      height: 37px;
+      border: 0.5px solid #514A7E;
+      background-color: #514A7E;
+      color: #fff;
+    }
+  }
+}

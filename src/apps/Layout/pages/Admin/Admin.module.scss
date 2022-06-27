@@ -1,0 +1,79 @@
+.root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  form{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(220, 220, 220);
+    border-radius: 10px;
+    padding: 36px;
+    height: fit-content;
+    gap: 20px;
+    .textField,
+    .textArea{
+      border: 1px solid rgb(124, 124, 124);
+      outline: none;
+      border-radius: 5px;
+      padding: 12px 16px;
+      background: transparent;
+      font-family: inherit;
+      font-size: 16px;
+      &:focus{
+        border-color: rgb(0, 0, 0);
+      }
+    }
+    button{
+      background-color: royalblue;
+      color: white;
+      width: fit-content;
+      padding: 12px 16px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      margin-top: 400px;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover{
+        background-color: rgb(32, 62, 155);
+      }
+      &:active{
+        background-color: rgb(15, 53, 170);
+      }
+      &:focus{
+        background-color: rgb(63, 89, 168);
+      }
+      &:disabled{
+        pointer-events: none;
+        cursor: progress;
+      }
+    }
+  }
+
+  .backBtn{
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    background-color: royalblue;
+    color: white;
+    width: fit-content;
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(32, 62, 155);
+    }
+    &:active{
+      background-color: rgb(15, 53, 170);
+    }
+  }
+}

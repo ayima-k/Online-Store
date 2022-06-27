@@ -1,0 +1,53 @@
+.navbarTablet{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 5rem;
+  @media (max-width: 1024px) {
+    margin-bottom: 2rem;
+  }
+  .bars{
+    font-size: 20px;
+    cursor: pointer;
+    @media (min-width: 1540px) {
+      font-size: 30px;
+    }
+  }
+  .searchIcon{
+    padding-top: 5px;
+    font-size: 20px;
+    @media (min-width: 1540px) {
+      font-size: 30px;
+    }
+  }
+  .searchInput{
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    border-bottom: 1px solid #7D7D7D;
+    @media (min-width: 1440px) {
+      margin-left: 10px;
+      font-size: 19px;
+    }
+    @media (min-width: 1540px) {
+      font-size: 25px;
+    }
+  }
+  span{
+    padding-left: 20px;
+    cursor: pointer;
+    @media (min-width: 1540px) {
+      font-size: 20px;
+    }
+  }
+}
+.container{
+  right: 0;
+  position: fixed;
+  z-index: 999;
+  background-color: white;
+  .row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
