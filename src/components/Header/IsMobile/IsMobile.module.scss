@@ -6,7 +6,7 @@
   }
   .searchInput{
     padding: 0 30px;
-    width: 100%;
+    width: 75%;
     display: flex;
     justify-content: center;
     margin: 0 10px;
@@ -24,12 +24,6 @@
       top: 9px;
       font-size: 15px;
       color: #7D7D7D;
-    }
-    @media (min-width: 375px) {
-      width: 88%;
-    }
-    @media (min-width: 425px) {
-      width: 80%;
     }
   }
   .searchIcon{

@@ -3,14 +3,17 @@
   flex-direction: column;
   justify-content: center;
   .container{
-    width: 100%;
+    width: 77%;
     display: flex;
     justify-content: center;
-    margin: 3% 0;
+    margin: 3% 10%;
     .row{
-      width: 80%;
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
+      @media (max-width: 425px) {
+        justify-content: center;
+      }
     }
   }
 }
