@@ -1,48 +1,43 @@
 body{
-    margin: 0;
+  margin: 0;
 }
 .sliderParent{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 5em;
-    height: 70vh;
-    align-items: center;
-    margin-top: 1%;
-    .image{
-        width: 75%;
-        height: 100%;
-        position: absolute;
-        opacity: 0;
-        transition: .5s;
-        box-shadow: 0 0 5px #ddd;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    .image.active{
-        opacity: 1;
-    }
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 5em;
+  height: 30vh;
+  align-items: center;
+  margin-top: 70px;
+  width: 100%;
+  .image{
+      width: 75%;
+      height: 100%;
+      position: absolute;
+      border-radius: 30px;
+      opacity: 0;
+      transition: .5s;
+      box-shadow: 0 0 5px #ddd;
+      border-radius: 5px;
+      object-fit: cover;
+  }
+  .image.active{
+      opacity: 1;
+  }
+  @media screen and (min-width: 768px) {
+      height:40vh;
+  }
+  @media screen and (min-width: 1024px) {
+      height:50vh;
+  }
+  @media screen and (min-width: 1500px) {
+      height:60vh;
+  }
+  
 }
-
 .centerDot{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-}
-.dotItem{
-  width: 5%;
-  height: 2px;
-  border-radius: 10px;
-  margin: 0 20px;
-  border: 2px solid #514A7E;
-  background-color: #514A7E;
-  transition: .5s;
-}
-.dotItem.active{
-  background-color: #514A7E !important;
-  height: 30px;
-  width: 30px;
-  border-radius: 100%;
-  border: none;
+  margin: 1rem 0;
 }
