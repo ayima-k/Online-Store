@@ -2,30 +2,31 @@ import React from 'react'
 import cls from './IsMobile.module.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
 import FooterMobile from '../FooterMobile'
-import useCards from '../../Main/Card/useCards'
 import List from '../../../utils/List'
 import CardTemplate from '../../Main/Card/CardTemplate'
+import { TextField } from '@mui/material'
 
-const IsMobile = () => {
-  const { cards } = useCards()
+const IsMobile = ({baseToSearch}) => {
 
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = React.useState('.')
   const [isToggle, setIsToggle] = React.useState(false)
 
   const toggle = () => setIsToggle(prev => !prev)
   
-  const finded = cards?.filter(item => item.name.toUpperCase().includes(value.toUpperCase()))
+  const finded = baseToSearch && baseToSearch?.filter(item => item?.name?.toUpperCase()?.includes(value !== '' && value.toUpperCase()))
   return (
     <>
       <div className={cls.header}>
         <div className={cls.navbar}>
           <AiOutlineSearch className={cls.searchIcon}/>
-          <input 
-            onChange={e => setValue(e.target.value)}
-            type="text" 
-            placeholder='Поиск' 
-            className={cls.searchInput}
-          />
+          <TextField
+              id="standard-basic" 
+              label="Поиск" 
+              onChange={e => setValue(e.target.value)}
+              color='secondary'
+              type="text"
+              className={cls.searchInput} variant="standard">
+          </TextField>
         </div>
         <FooterMobile/>
       </div>

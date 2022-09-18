@@ -1,0 +1,62 @@
+.block {
+  padding: 1rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: rgba(204, 204, 204, 0.5);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .review{
+    width: 100%;
+    border: 0.5px solid #514A7E;
+    margin-top: 1rem;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    .div{
+      display: flex;
+    }
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-right: 2rem;
+    .profileImg {
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+  
+  .body {
+    display: flex;
+    align-items: center;
+    h3 {
+      font-size: 18px;
+      color: #1b1b1b;
+    }
+    svg {
+      color: #514A7E;
+    }
+    .date{
+      color: #5b5b5b;
+      font-size: 13px;
+    }
+    p{
+      font-size: 15px;
+      color: #1b1b1b;
+    }
+  }
+}

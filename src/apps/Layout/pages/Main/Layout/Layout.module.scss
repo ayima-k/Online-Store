@@ -13,6 +13,13 @@
       flex-wrap: wrap;
       @media (max-width: 425px) {
         justify-content: center;
+        margin-left: -20px;
+      }
+      @media (min-width: 768px) {
+        margin-left: -10px;
+      }
+      @media (min-width: 1024px) {
+        margin-left: 0;
       }
     }
   }

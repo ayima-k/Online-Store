@@ -8,18 +8,15 @@ import Profile from '../../../utils/List/ProfileTablet'
 import List from '../../../utils/List'
 import { useNavigate } from 'react-router-dom'
 import cls from './Navbar.module.scss'
-import useCards from '../../Main/Card/useCards'
 import CardTemplate from '../../Main/Card/CardTemplate'
+import { IconButton, TextField } from '@mui/material'
 
 
-const Navbar = () => {
+const Navbar = ({baseToSearch}) => {
   const navigate = useNavigate()
 
-  const { cards } = useCards()
-
-  const [value, setValue] = React.useState('')
-
-  const finded = cards?.filter(item => item.name.toUpperCase().includes(value.toUpperCase()))
+  const [value, setValue] = React.useState('.')
+  const finded = baseToSearch && baseToSearch?.filter(item => item?.name?.toUpperCase()?.includes(value !== '' && value.toUpperCase()))
 
   const [isToggle, setIsToggle] = React.useState(false)
   const [isToggleProfile, setIsToggleProfile] = React.useState(false)
@@ -31,22 +28,24 @@ const Navbar = () => {
     <>
       <div className={cls.navbarTablet}>
         <div>
-          <GiHamburgerMenu onClick={toggle} className={cls.bars}/>
+          <IconButton onClick={toggle} className={cls.bars}><GiHamburgerMenu /></IconButton>
         </div>
         <div>
           <AiOutlineSearch className={cls.searchIcon}/>
-          <input 
-            onChange={e => setValue(e.target.value)}
-            type="text" 
-            placeholder='Поиск' 
-            className={cls.searchInput}
-          />
+          <TextField 
+              id="standard-basic" 
+              label="Поиск" 
+              onChange={e => setValue(e.target.value)}
+              color='secondary'
+              type="text"
+              className={cls.searchInput} variant="standard">
+          </TextField>
           <span>
-            <CgProfile onClick={toggleProfile}/>
+            <IconButton onClick={toggleProfile}><CgProfile /></IconButton>
             <Profile isToggle={isToggleProfile} toggle={toggleProfile}/>
           </span>
-          <span><AiOutlineHeart onClick={() => navigate('/favorites')}/></span>
-          <span><AiOutlineShopping onClick={() => navigate('/basket')}/></span>
+          <span><IconButton onClick={() => navigate('/favorites')}><AiOutlineHeart/></IconButton></span>
+          <span><IconButton  onClick={() => navigate('/basket')}><AiOutlineShopping/></IconButton></span>
         </div>
       </div>    
       <div className={cls.container}>

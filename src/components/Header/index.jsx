@@ -3,8 +3,12 @@ import { useMediaQuery } from 'react-responsive'
 import Navbar from './Navbar/Navbar'
 import '../Header/Header.scss'
 import IsMobile from './IsMobile'
+import useCards from '../Main/Card/hooks/useCards'
 
 const Header = () => {
+
+  const { cards } = useCards()
+
   const isMobile = useMediaQuery({
     query: "(max-width: 425px)"
   })
@@ -14,12 +18,12 @@ const Header = () => {
   return (
     <React.Fragment>
       {
-        isMobile && (<IsMobile/>)
+        isMobile && (<IsMobile baseToSearch={cards}/>)
       }
       {
         isTablet && (
           <>
-            <Navbar/>
+            <Navbar baseToSearch={cards}/>
           </>
         )
       }

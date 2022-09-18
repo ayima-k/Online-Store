@@ -44,7 +44,7 @@ const ChatWindow = ({isToggle, toggle}) => {
         minute: date.getMinutes()
       }
     })
-    setValue(' ')
+    setValue('')
   }
 
   return (
@@ -60,7 +60,13 @@ const ChatWindow = ({isToggle, toggle}) => {
               {messages?.map(message => (
                 <div key={message.text} className={users.uid === message.uid ? 'mainBlock' : 'otherBlock'}>
                   <div className='userBlock'>
-                    <img src={message.photo} className='photoUrl' alt="" />
+                    {
+                      message.photo?.length >= 2 ?
+                        <img className='photoUrl' alt="No photo" src={message.photo}/>
+                      : (
+                        <img className='photoUrl' src='https://i.pinimg.com/280x280_RS/2e/45/66/2e4566fd829bcf9eb11ccdb5f252b02f.jpg' alt="yy" />
+                      )
+                    }
                   </div>
                   <div className='block'>
                     <h5>{message.name}</h5>

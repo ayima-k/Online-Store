@@ -9,6 +9,8 @@
     flex-direction: column;
     align-items: center;
     gap: 50px;
+    margin-top: -13%;
+    height: 100vh;
     .container{
       text-align: center;
       width: 100%;
@@ -44,6 +46,18 @@
         font-size: 15px;
         height: 37px;
         border: 0.5px solid #514A7E;
+        &:hover{
+          background-color: #514A7E;
+        }
+      }
+      .signIn{
+        font-size: 11px;
+        border: 0.5px solid #514A7E;
+        background-color: #514A7E;
+        color: #fff;
+        &:hover{
+          background-color: #514A7E;
+        }
       }
     }
     .go{
@@ -56,6 +70,18 @@
       border: 0.5px solid #514A7E;
       background-color: #514A7E;
       color: #fff;
+      margin-top: 10px;
+      &:hover{
+        background-color: #514A7E;
+      }
+    }
+    .disabled{
+      background-color: #6f6996;
+      color: #fff !important;
+      border: none;
+      &:hover{
+        background-color: #6f6996;
+      }
     }
   }
 }

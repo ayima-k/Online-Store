@@ -1,34 +1,43 @@
-
 .card{
-  width: 220px;
+  width: 200px;
   height: 250px;
-  margin: 10px 15px;
-  margin-left: -50px;
+  margin: 10px 0;
   padding: 5px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media screen and (min-width:425px) {
-    margin-left: -35px;
+  @media (max-width: 450px) {
+    width: 270px;
+    height: 300px;
   }
-  @media screen and (min-width:450px) {
-    margin-left: 0;
+  @media (min-width: 1024px) {
+    width: 230px;
+    height: 280px;
   }
-  @media screen and (min-width:1024px) {
-    width: 290px;
-    height: 340px;
+  @media (min-width: 1440px) {
+    width: 350px;
+    height: 420px;
+    margin-left: 1rem;
   }
   .cardImg{
-    width: 220px;
+    width: 180px;
     height: 180px;
     padding: 10px;
     margin: 10px 20px;
-    @media screen and (min-width:1024px) {
-      width: 290px;
-      height: 250px;
+    @media (max-width: 425px) {
+      width: 270px;
+      height: 200px;
+    }
+    @media (min-width:1024px) {
+      width: 200px;
+      height: 190px;
+    }
+    @media (min-width: 1440px) {
+      width: 340px;
+      height: 340px;
     }
     .image{
-      width: 100%;
+      width: 90%;
       height: 100%;
       object-fit: cover;
     }
@@ -49,23 +58,6 @@
       font-size: 17px;
       color: rgb(136, 133, 133);
     }
-    .more{
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 20px;
-      .url{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        .btnMore{
-          border: 1px solid black;
-          color: black;
-          padding: 7px 10px;
-          font-size: 17px;
-          text-decoration: none;
-        }
-      }
-    }
     .iconList{
       list-style: none;
       display: flex;
@@ -73,6 +65,30 @@
         font-size: 25px;
         padding: 0 10px;
         cursor: pointer;
+      }
+    }
+  }
+  .cardFooter{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 40px;
+    .btnMore{
+      border: 1px solid black;
+      border-radius: 0;
+      width: auto;
+      height: auto;
+      color: #514A7E;
+      padding: 6px 9px;
+      font-size: 13px;
+      text-decoration: none;
+      @media (max-width: 768px) {
+        font-size: 10px;
+        padding: 5px 8px;
+      }
+    }
+    div{
+      span{
+        padding-right: -20px;
       }
     }
   }

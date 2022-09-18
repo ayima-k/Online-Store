@@ -1,6 +1,6 @@
 import React from 'react'
-import { getCards } from "../../../api/index";
-import Loader from '../../Loader'
+import { getCards } from "../../../../api";
+import Loader from '../../../Loader'
 
 const useCards = () => {
   const [cards, setCards] = React.useState(null)

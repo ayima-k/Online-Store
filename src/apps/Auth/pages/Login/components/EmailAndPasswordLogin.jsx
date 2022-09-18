@@ -1,6 +1,8 @@
 import React from 'react'
+import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import FormInput from '../../../../../components/FormInput/FormInput'
+import Swal from "sweetalert2";
 import { handleLoginWithEmailAndPassword, handleLoginWithGoogle } from '../../../../../firebase'
 import cls from './Login.module.scss'
 
@@ -10,11 +12,29 @@ const EmailAndPasswordLogin = () => {
 
   const navigate = useNavigate()
 
+  const setError = (e) => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    return Toast.fire({
+      icon: 'error',
+      title: `${e.toString().substr(37,34)}`
+    })
+  }
+
   return (
     <form>
       <h1>Войти в кабинет</h1>
         <FormInput
-          type={'email'}
+          type='email'
           placeholder={'Электронная почта'}
           defaultValue={email}
           setInputsValue={setEmail}
@@ -22,7 +42,7 @@ const EmailAndPasswordLogin = () => {
         />
 
         <FormInput
-          type={'password'}
+          type='password'
           placeholder={'Пароль'}
           defaultValue={password}
           setInputsValue={setPassword}
@@ -30,21 +50,37 @@ const EmailAndPasswordLogin = () => {
         />
 
         <div>
-          <button
-            className={cls.go}
+          <Button
+            color='white'
+            variant={
+              password == '' || email == '' 
+              ? 'disabled' : email.includes('@gmail.com') 
+              ? 'filled' : email != `${email}@gmail.com` 
+              ? 'disabled' : 'filled'
+            }
+            className={
+              password == '' || email == '' 
+              ? cls.disabled : email.includes('@gmail.com') 
+              ? cls.go : email != `${email}@gmail.com` 
+              ? cls.disabled : cls.go
+            }
             onClick={e => {
               e.preventDefault()
-              handleLoginWithEmailAndPassword(email, password)
+              if (email.includes('@gmail.com')) {
+                handleLoginWithEmailAndPassword(email, password, setError) 
+              }
             }
-          }>
+            }
+          >
             Отправить
-          </button>
-          <button 
+          </Button>
+          <Button
+            variant='filled' 
             onClick={() => navigate('/auth/register')} 
             className={cls.signIn}
           >
             Регистрация
-          </button>
+          </Button>
         </div>
 
 

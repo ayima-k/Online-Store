@@ -1,3 +1,4 @@
+import { IconButton } from '@mui/material'
 import React from 'react'
 import { BsChatTextFill } from 'react-icons/bs'
 import './Chat.scss'
@@ -10,7 +11,9 @@ const Chat = () => {
   return (
     <React.Fragment>
       <div className='chatIcon' onClick={toggle}>
-        <BsChatTextFill/>
+        <IconButton>
+          <span><BsChatTextFill/></span>
+        </IconButton>
       </div>
       <ChatWindow isToggle={isToggle} toggle={toggle}/>
     </React.Fragment>

@@ -18,7 +18,12 @@ const LayoutRoutes = () => {
         <Route path='/' element={<LayoutPages.Main/>}/>
         <Route path='/basket' element={<LayoutPages.Basket/>}/>
         <Route path='/favorites' element={<LayoutPages.Favorites/>}/>
-        <Route path='/admin' element={<LayoutPages.Admin/>}/>
+        <Route path='/admin' element={<LayoutPages.Admin.Main/>}/>
+        <Route path='/admin/create' element={<LayoutPages.Admin.Create/>}/>
+        <Route path='/admin/orders' element={<LayoutPages.Admin.Orders/>}/>
+        <Route path='/cards/:id' element={<LayoutPages.CardMore/>}/>
+        <Route path='/cards/category/:category' element={<LayoutPages.Category/>}/>
+        <Route path='/profile/:uid' element={<LayoutPages.Profile/>}/>
       </Routes>
     </React.Fragment>
   )

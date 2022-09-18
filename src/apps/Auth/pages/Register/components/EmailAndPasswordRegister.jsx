@@ -1,22 +1,30 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import FormInput from '../../../../../components/FormInput/FormInput'
-import { handleLoginWithGoogle, handleRegisterWithEmailAndPassword } from '../../../../../firebase'
+import { handleRegisterWithEmailAndPassword } from '../../../../../firebase'
 import cls from './Register.module.scss'
+import useAlert from '../../../../../components/useAlerts'
+import { Button } from '@mui/material'
 
 const EmailAndPasswordRegister = () => {
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [name, setName] = React.useState('')
-  const [photo, setPhoto] = React.useState('')  
+  const [photo, setPhoto] = React.useState('')
+
+  const { actions } = useAlert()
 
   const navigate = useNavigate()
+
+  const setError = (e) => {
+    actions.sweetAlert(e)
+  }
 
   return (
     <form>
       <h1>Регистрация</h1>
       <FormInput
-        type={'text'}
+        type='text'
         placeholder={'Имя'}
         defaultValue={name}
         setInputsValue={setName}
@@ -24,7 +32,7 @@ const EmailAndPasswordRegister = () => {
       />
 
       <FormInput
-        type={'email'}
+        type='email'
         placeholder={'Электронная почта'}
         defaultValue={email}
         setInputsValue={setEmail}
@@ -32,49 +40,57 @@ const EmailAndPasswordRegister = () => {
       />
 
       <FormInput
-        type={'password'}
+        type='password'
         placeholder={'Пароль'}
         defaultValue={password}
         setInputsValue={setPassword}
         name={'password'}
       />
 
-      <FormInput
-        type={'text'}
-        placeholder={'Фото'}
-        defaultValue={photo}
-        setInputsValue={setPhoto}
-        name={'email'}
-      />
-
+      <div className={cls.photoBlock}>
+        <FormInput
+          type='text'
+          placeholder={'Фото'}
+          defaultValue={photo.name}
+          setInputsValue={setPhoto}
+          name={'url'}
+          className={cls.photoInput}
+        />
+        
+      </div>
+ 
       <div>
-        <button
-          className={cls.go}
-          onClick={e => {
-            e.preventDefault()
-            handleRegisterWithEmailAndPassword(email, password, name, photo)
+        <Button
+          color='white'
+          variant={
+            password == '' || email == '' 
+            ? 'disabled' : email.includes('@gmail.com') 
+            ? 'filled' : email != `${email}@gmail.com` 
+            ? 'disabled' : 'filled'
           }
+          className={
+            password == '' || name == '' || photo == '' || email == ''
+            ? cls.disabled : email.includes('@gmail.com') 
+            ? cls.go : email != `${email}@gmail.com` 
+            ? cls.disabled : cls.go
+          }
+          onClick={e => {
+              e.preventDefault()
+              if (email.includes('@gmail.com')) {
+                handleRegisterWithEmailAndPassword(email, password, name, photo, setError)
+              }
+            }
           }
         >
           Отправить
-        </button>
-        <button 
+        </Button>
+        <Button
+          variant='filled' 
           onClick={() => navigate('/auth/login')} 
           className={cls.signIn}
           >
           Вход в кабинет
-        </button>
-      </div>
-
-
-      <div className={cls.container} onClick={handleLoginWithGoogle}>
-          <img
-            width={'30px'}
-            style={{cursor: 'pointer'}}
-            src="https://cdn-icons-png.flaticon.com/512/2875/2875404.png" 
-            alt=""
-          />
-          <p>Войти с помощью Google?</p>
+        </Button>
       </div>
     </form>
   )

@@ -16,7 +16,8 @@
     height: fit-content;
     gap: 20px;
     .textField,
-    .textArea{
+    .textArea,
+    .textAreaReal{
       border: 1px solid rgb(124, 124, 124);
       outline: none;
       border-radius: 5px;
@@ -28,6 +29,14 @@
         border-color: rgb(0, 0, 0);
       }
     }
+    .textAreaReal{
+      width: 180px;
+      min-width: 180px;
+      max-width: 180px;
+      min-height: 20px;
+      height: 20px;
+      max-height: 200px;
+    }
     button{
       background-color: royalblue;
       color: white;
@@ -36,7 +45,7 @@
       border: none;
       outline: none;
       border-radius: 5px;
-      margin-top: 400px;
+      margin-top: 600px;
       font-size: 16px;
       cursor: pointer;
       &:hover{
@@ -75,5 +84,8 @@
     &:active{
       background-color: rgb(15, 53, 170);
     }
+  }
+  .select{
+    width: 210px;
   }
 }

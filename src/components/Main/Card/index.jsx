@@ -1,5 +1,5 @@
 import React from 'react'
-import useCards from './useCards';
+import useCards from './hooks/useCards';
 import CardTemplate from './CardTemplate';
 
 const Card = () => {
@@ -9,9 +9,9 @@ const Card = () => {
   return (
     <>
       {
-        cards?.map(({name, price, category, basket, favorite, url, id}) => {
+        cards?.map(({name, price, category, url, id, size}) => {
           
-          return <CardTemplate key={id} name={name} price={price} category={category} basket={basket} favorite={favorite} url={url} id={id}/>
+          return <CardTemplate key={id} name={name} price={price} category={category} url={url} id={id} size={size}/>
         })
       }
     </>

@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from "firebase/auth"
 import React from "react"
 import { auth } from "../firebase"
+import { createUser } from "../api"
 
 export const AuthContext = React.createContext({})
 
@@ -16,9 +17,15 @@ const AuthProvider = ({children}) => {
         setUsers({
           uid: user.uid,
           email:user.email,
-          name:user.displayName,
+          name:user.displayName ,
           photo:user.photoURL
         })
+        createUser({
+          uid: user.uid,
+          email:user.email,
+          name:user.displayName ,
+          photo:user.photoURL,
+        }, user.uid)
       } else {
         setLoading(false)
       }
@@ -28,11 +35,11 @@ const AuthProvider = ({children}) => {
 
   const value = React.useMemo(() => ({
     users,
-    loading
+    loading,
   }), [users, loading])
 
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
-export default AuthProvider 
+export default AuthProvider

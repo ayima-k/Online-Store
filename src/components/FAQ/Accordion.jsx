@@ -1,21 +1,25 @@
-import React from 'react'
-import { ImCross } from 'react-icons/im'
-import './Accordion.css'
+import * as React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Accordion = ({title, desc}) => {
-  const [isActive, setIsActive] = React.useState(false);
-
+export default function SimpleAccordion({title, desc}) {
   return (
-    <div className="accordion-item">
-      <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
-        <div className='accordion-block'>
-          <div className='title-acc'>{title}</div>
-          <div><h3>{isActive ? <p><ImCross/></p> : '+'}</h3></div>
-        </div>
-      </div>
-      {isActive && <div className="accordion-content">{desc}</div>}
+    <div style={{borderBottom: '0.5px solid rgba(255, 255, 255, 0.768)'}}>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{title}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{desc}</Typography>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 }
-
-export default Accordion;
