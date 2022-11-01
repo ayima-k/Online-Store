@@ -2,9 +2,9 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import FormInput from '../../../../../components/FormInput/FormInput'
 import { handleRegisterWithEmailAndPassword } from '../../../../../firebase'
-import cls from './Register.module.scss'
 import useAlert from '../../../../../components/useAlerts'
 import { Button } from '@mui/material'
+import cls from './Register.module.scss'
 
 const EmailAndPasswordRegister = () => {
   const [email, setEmail] = React.useState('')
@@ -47,17 +47,13 @@ const EmailAndPasswordRegister = () => {
         name={'password'}
       />
 
-      <div className={cls.photoBlock}>
-        <FormInput
-          type='text'
-          placeholder={'Фото'}
-          defaultValue={photo.name}
-          setInputsValue={setPhoto}
-          name={'url'}
-          className={cls.photoInput}
-        />
-        
-      </div>
+      <FormInput
+        type='text'
+        placeholder={'Фото'}
+        defaultValue={photo.name}
+        setInputsValue={setPhoto}
+        name={'url'}
+      />
  
       <div>
         <Button

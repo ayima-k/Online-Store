@@ -1,5 +1,5 @@
-import { IconButton } from '@mui/material'
 import React from 'react'
+import { IconButton } from '@mui/material'
 import { IoMdArrowBack } from 'react-icons/io'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getCards } from '../../../../api'
@@ -12,8 +12,6 @@ const Category = () => {
   const { category } = useParams()
   const navigate = useNavigate()
   const [data, setData] = React.useState(null)
-
-  console.log(category);
 
   const get = () => {
 		getCards()
@@ -35,8 +33,6 @@ const Category = () => {
     get()
   }, [get])
 
-  console.log(data)
-
 	if (!data)
 		return (
 			<div className={cls.loading}>
@@ -50,7 +46,7 @@ const Category = () => {
       <Navbar/>
       <div className={cls.dflex}>
         <div className={cls.goBack}>
-          <IconButton onClick={() => navigate(-2)}>
+          <IconButton onClick={() => navigate('/')}>
             <span className={cls.icon}><IoMdArrowBack/></span>
           </IconButton>
         </div>

@@ -7,7 +7,6 @@ import { useAuth } from "./providers/useAuth";
 
 export function App() {
   const { users , loading} = useAuth()
-  console.log(users);
 
   if (loading) return <Loader/>
 

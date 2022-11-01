@@ -1,14 +1,14 @@
 import React from 'react'
-import cls from './Footer.module.scss'
-import '../Header.scss'
 import { useNavigate } from 'react-router-dom'
 import { AiOutlineHome } from 'react-icons/ai'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineShopping } from 'react-icons/ai'
-import List from '../../../utils/List'
-import Profile from '../../../utils/List/Profile'
+import List from '../../../components/utils/List'
+import Profile from '../../../components/utils/List/Profile'
+import cls from './Footer.module.scss'
+import '../Header.scss'
 
 const FooterMobile = () => {
   const navigate = useNavigate()

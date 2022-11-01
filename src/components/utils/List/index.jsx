@@ -1,7 +1,7 @@
-import { IconButton } from '@mui/material'
 import React from 'react'
+import { IconButton } from '@mui/material'
 import { useMediaQuery } from 'react-responsive'
-import ListDividers from '../../components/List'
+import ListDividers from '../../../components/List'
 
 const List = ({isToggle, toggle}) => {
   const isMobile = useMediaQuery({

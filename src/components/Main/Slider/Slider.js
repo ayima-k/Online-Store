@@ -1,9 +1,9 @@
 import React from "react";
-import { SliderList } from "../../../utils/utils"; 
-import './Slider.scss'
+import { SliderList } from "../../../components/utils/utils"; 
 import { Btn } from "./Button";
-import Dot from "./Dot";
 import { useNavigate } from "react-router-dom";
+import Dot from "./Dot";
+import './Slider.scss'
 
 export const Slider = () => {
     const navigate = useNavigate()

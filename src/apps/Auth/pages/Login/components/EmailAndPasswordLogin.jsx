@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { handleLoginWithEmailAndPassword, handleLoginWithGoogle } from '../../../../../firebase'
 import FormInput from '../../../../../components/FormInput/FormInput'
 import Swal from "sweetalert2";
-import { handleLoginWithEmailAndPassword, handleLoginWithGoogle } from '../../../../../firebase'
 import cls from './Login.module.scss'
 
 const EmailAndPasswordLogin = () => {
@@ -31,7 +31,7 @@ const EmailAndPasswordLogin = () => {
   }
 
   return (
-    <form>
+    <form className={cls.form}>
       <h1>Войти в кабинет</h1>
         <FormInput
           type='email'

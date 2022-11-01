@@ -1,6 +1,6 @@
 import React from 'react'
-import { handleSignOut } from '../../firebase'
-import { useAuth } from '../../providers/useAuth'
+import { handleSignOut } from '../../../firebase'
+import { useAuth } from '../../../providers/useAuth'
 import { VscSignOut } from 'react-icons/vsc'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'

@@ -1,9 +1,9 @@
 import React from 'react'
-import { handleSignOut } from '../../firebase'
-import { useAuth } from '../../providers/useAuth'
+import { handleSignOut } from '../../../firebase'
+import { useAuth } from '../../../providers/useAuth'
 import { VscSignOut } from 'react-icons/vsc'
 import { useNavigate } from 'react-router-dom'
-import { getUser } from '../../api'
+import { getUser } from '../../../api'
 import { Button } from '@mui/material'
 
 const ProfileTablet = ({isToggle, toggle}) => {

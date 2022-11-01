@@ -1,10 +1,10 @@
 import React from 'react'
-import cls from './IsMobile.module.scss'
-import { AiOutlineSearch } from 'react-icons/ai'
 import FooterMobile from '../FooterMobile'
-import List from '../../../utils/List'
+import List from '../../../components/utils/List'
 import CardTemplate from '../../Main/Card/CardTemplate'
+import { AiOutlineSearch } from 'react-icons/ai'
 import { TextField } from '@mui/material'
+import cls from './IsMobile.module.scss'
 
 const IsMobile = ({baseToSearch}) => {
 

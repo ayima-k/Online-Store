@@ -1,5 +1,5 @@
 import React from 'react'
-import { DropdownList } from '../../utils/List/DropdownList'
+import { DropdownList } from '../../components/utils/List/DropdownList'
 import Accordion from './Accordion'
 import cls from './FAQ.module.scss'
 

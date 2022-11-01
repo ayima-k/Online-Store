@@ -1,11 +1,10 @@
 import React from 'react'
 import { Routes, Route , useNavigate } from 'react-router-dom';
-import * as LayoutPages from '../../apps/Layout/pages/'
 import { useAuth } from '../../providers/useAuth';
+import * as LayoutPages from '../../apps/Layout/pages/'
 
 const LayoutRoutes = () => {
   const { users } = useAuth()
-
   const navigate = useNavigate()
 
   React.useEffect(() => {

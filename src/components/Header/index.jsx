@@ -1,9 +1,9 @@
 import React from 'react'
-import { useMediaQuery } from 'react-responsive'
 import Navbar from './Navbar/Navbar'
-import '../Header/Header.scss'
 import IsMobile from './IsMobile'
 import useCards from '../Main/Card/hooks/useCards'
+import { useMediaQuery } from 'react-responsive'
+import '../Header/Header.scss'
 
 const Header = () => {
 

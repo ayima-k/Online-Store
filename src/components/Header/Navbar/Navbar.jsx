@@ -1,15 +1,15 @@
 import React from 'react'
+import Profile from '../../../components/utils/List/ProfileTablet'
+import List from '../../../components/utils/List'
+import CardTemplate from '../../Main/Card/CardTemplate'
+import { useNavigate } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { AiOutlineShopping } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { AiOutlineSearch } from 'react-icons/ai'
-import Profile from '../../../utils/List/ProfileTablet'
-import List from '../../../utils/List'
-import { useNavigate } from 'react-router-dom'
-import cls from './Navbar.module.scss'
-import CardTemplate from '../../Main/Card/CardTemplate'
 import { IconButton, TextField } from '@mui/material'
+import cls from './Navbar.module.scss'
 
 
 const Navbar = ({baseToSearch}) => {

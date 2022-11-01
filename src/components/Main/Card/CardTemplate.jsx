@@ -1,5 +1,4 @@
 import React from 'react'
-import { AiFillStar } from 'react-icons/ai'
 import { addToBasket, addToFavorites, getCards, removeFromCart, removeFromFavorites } from '../../../api';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../../../providers/useAuth';
@@ -8,9 +7,8 @@ import BasketBtn from './Btn/BasketBtn'
 import  useAlerts  from '../../useAlerts'
 import cls from './Card.module.scss'
 import { Button } from '@mui/material';
-import Size from '../../../apps/Layout/pages/CardMore/Size.jsx';
 
-const CardTemplate = ({name, price, category, url, id, size}) => {
+const CardTemplate = ({name, price, url, id}) => {
   const { actions } = useAlerts()
   const { users } = useAuth()
   const [card, setCard] = React.useState(null)
@@ -86,7 +84,6 @@ const CardTemplate = ({name, price, category, url, id, size}) => {
       basketProduct.page = false
     }
 		addToBasket(basketProduct, users.uid, id)
-    console.log(basketProduct);
     getCards()
     .then(res => {
       const newData = res ? Object.entries(res).map(([id, rest, page]) => {
